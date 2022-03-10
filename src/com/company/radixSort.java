@@ -28,7 +28,7 @@ public class radixSort {
             for (int i = 0; i < n; i++)
             {
                 int siffer = (a[i] / ti_i_m) % 10;
-                Q[siffer].add(new Integer(a[i]));
+                Q[siffer].add(a[i]);
             }
 
             // TÃ¸mmer kÃ¸ene og legger tallene fortlÃ¸pende tilbake i a
@@ -42,20 +42,15 @@ public class radixSort {
         }
     }
 
-    public static void main(String[] args)
+    public static void radixSort(int[] a, int maksAntSiffer)
     {
         // Leser antall tall og antall siffer fra kommandolinja
-        int n = Integer.parseInt(args[0]);
-        int m = Integer.parseInt(args[1]);
+        int n = a.length;
+        int m = maksAntSiffer;
 
         // Beregner maks.verdi for tallene som skal sorteres
         int ti_i_m = (int) java.lang.Math.pow(10,m);
-        int a[] = new int[n];
-        Random R = new Random();
 
-        // Fyller array med tilfeldige tall mellom 0 og 10^m - 1
-        for (int i = 0; i < n; i++)
-            a[i] = R.nextInt(ti_i_m);
 
         // Sorterer
         radixSort rS = new radixSort();
