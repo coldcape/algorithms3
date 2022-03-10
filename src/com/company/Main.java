@@ -95,7 +95,8 @@ public class Main {
                         mergeSort(A, 0, n - 1);
 
                     } else if (sortingMethod == 4) { // Radix
-                        radixSort(A, n);
+                        int stringN = Integer.toString(n).length();
+                        radixSort(A, stringN);
                     }
                     time = System.currentTimeMillis() - time;
                     if (sortingMethod == 1) { // Quick Sort
